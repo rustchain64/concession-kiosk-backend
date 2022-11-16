@@ -34,6 +34,7 @@ else if (process.env.MONGODB_URL){
 app.get('/ticketNumber', function(req, res, next) {
 	let newTicketNumber = 100;
 	mongo.connect(dbConnectionUrl, (err, client) => {
+		console.log("DB connection URL: ",dbConnectionUrl);
 		if (err) {
 		  console.error(err);
 		  res.send({success: false, result: 9999});
@@ -69,6 +70,8 @@ app.get('/allorders', function (req, res, next) {
 	var ordersList;
 
 	mongo.connect(dbConnectionUrl, (err, client) => {
+	console.log("DB connection URL: ",dbConnectionUrl);
+
 		if (err) {
 		  console.error(err)
 		  return
@@ -93,6 +96,8 @@ app.get('/debug', function(req, res, next) {
 
 	mongo.connect(dbConnectionUrl, (err, client) => {
 		if (err) {
+			console.log("DB connection NOT connected!!!!: ",dbConnectionUrl);
+
 			console.error(err)
 		} else {
 			console.log('Connected to Mongo')
