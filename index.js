@@ -23,7 +23,7 @@ if (mongoUri) {
 	dbConnectionUrl = pieces[0] + '//' + auth + pieces[1] + '/' + dbName;
 }
 else if (process.env.MONGODB_URL){
-	dbConnectionUrl = process.env.MONGODB_URL || 'mongodb://localhost:27017/sampledb';
+	dbConnectionUrl = process.env.MONGODB_URL || 'mongodb://localhost:27017/piedb';
 } else {
 	dbConnectionUrl = 'mongodb://' + mongoUsername + ':' + 
 					mongoPassword + '@' + 
