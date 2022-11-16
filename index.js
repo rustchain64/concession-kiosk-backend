@@ -5,12 +5,12 @@ const port = process.env.PORT || 8080;
 const mongo = require('mongodb').MongoClient;
 
 const mongoUri = process.env.uri;
-const mongoUsername = process.env.username || process.env.MONGODB_USER;
-const mongoPassword = process.env.password || process.env.MONGODB_PASSWORD;
+const mongoUsername = process.env.username || process.env.MONGODB_USER || 'luke';
+const mongoPassword = process.env.password || process.env.MONGODB_PASSWORD || 'secret';
 const dbName = process.env.database_name || 
 			   process.env.MONGODB_DBNAME || 
 			   process.env.MONGODB_DATABASE ||
-			   'sampledb';
+			   'piedb';
 const dbServiceName = process.env.DATABASE_SERVICE_NAME || 'localhost';
 
 var dbConnectionUrl;
